@@ -1,0 +1,424 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: white;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+    overflow-x: hidden;
+}
+*::selection{
+    background-color: #fff;
+    color: #95C11E;
+}
+.nav{
+    height: 105px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+    gap: 30px;
+    position: fixed;
+    z-index: 99;
+}
+.nav img{
+    height: 75px;
+    padding-left: 60px;
+}
+.nav h4{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 9px;
+    background-color: #000;
+}
+body::-webkit-scrollbar-thumb{
+   background-color: #95C11E;
+   border-radius: 20px;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 300px;
+    width: 300px;
+    background-color: /*#c9f05d */hsla(76, 73%, 44%, 0.39);
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(30px); /*read + marquee*/
+    z-index: 9;
+}
+video{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
+}
+#main{
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 90px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    top: -4px;
+    left: -4px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+#page1 p{
+    font-size: 18px;
+    font-weight: 300;
+    width: 60%;
+    line-height: 1.5;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+    z-index: 10;
+}
+#scroller{
+    white-space: nowrap;  
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite ;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 100px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Gilroy';
+    margin: 0 10px;
+    transition: all linear 0.4;
+    -webkit-text-stroke: 1px #fff; /* read */
+}
+#scroller h4:hover{
+    color: #95C11E;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+#heading h3{
+    font-weight: 900;
+   font-size: 35px;
+   height: 15vh;
+   margin: 30px 0 30px 0;
+   padding: 0;
+   text-align: center;
+}
+#about-us-in{
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about-us-in img{
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 60px;
+    opacity: 0.6;
+    z-index: 15;
+    
+}
+#para>p{
+    margin-top: 20px;
+    line-height: 1.98;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 0 35px;
+    text-align: center;
+}
+#para{
+    width: calc(100% - 500px);
+    display: flex;
+    flex-direction: column;
+}
+p .para{
+    margin-top: 30px;
+}
+#cards-container{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+#cards-container::before{
+    content: "";
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-white.svg);
+    background-position: center;
+    background-size: cover;
+    -webkit-box-reflect: below;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    z-index: -1;
+    padding: 15px;
+    margin: 5px 0 0 55px;
+}
+.cards{
+    height: 80%;
+    width: 25%;
+    background-color: antiquewhite;
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+#card-1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card-2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card-3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overley{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    border-radius: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.overley h4{
+    font-size: 28px;
+    font-weight: 800;
+    padding-top: 80px;
+    color: #000;
+    text-transform: uppercase;
+}
+.overley p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 2;
+    padding: 20px;
+    color: #000;
+}
+.cards:hover .overley{
+    opacity: 1;
+} 
+.cards:hover{
+    transform: rotate3D(-1, 1, 0, -20deg);
+}
+#banner{
+    width: 100%;
+    height: 250px;
+    display: flex;
+   padding: 0;
+   margin: 0;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(to left, #27A636, #A0CF20);
+}
+#banner img{
+    width: 150px;
+    height: 250px;
+    object-fit: cover;
+}
+#banner p{
+    font-size: 25px;
+    color: #000;
+    font-weight: 800;
+    width: 50%;
+    line-height: 1.5;
+}
+#page3{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3>p{
+    font-size: 25px;
+    font-weight: 600;
+    width: 65%;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+}
+#page3 img{
+    height: 40px;
+    position: absolute;
+}
+#colon1{
+    top: 25%;
+    left: 15%;
+}
+#colon2{
+    bottom: 25%;
+    right: 15%;
+}
+#page4{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    position: relative;
+}
+.elem{
+    height: 38%;
+    width: 27%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+    transition: all ease 0.5s;
+}
+.elem h2{
+    text-align: center;
+    background-color: #95C11E;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #000;
+    position: absolute;
+    z-index: 10;
+}
+.elem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    scale: 1.1;
+    opacity: 0.8;
+}
+.elem:hover h2{
+    color: #fff;
+    background-color: transparent;
+}
+.elem:hover img{
+    scale: 1;
+}
+#page4 h1{
+    font-size: 58px;
+    position: absolute;
+    top: 17.5%;
+    left: 6.5%;
+    font-family: sans-serif;
+    color: black;
+    -webkit-text-stroke: 1px #fff;
+}
+/* can't we say an element on hovering over it th eproperty of its siblings change? as in this code: .elem:hover #page4 h1{
+    -webkit-text-stroke: 2px #95C11E
+} */
+.elem:hover h1{
+    color: rebeccapurple;
+    -webkit-text-stroke: 2px #95C11E
+}
+footer{
+    width: 100%;
+    background: linear-gradient(to right top, #95C11E, #27A636);
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer-links{
+    padding: 50px 0 30px 50px;
+}
+.address{
+    padding: 50px 50px 30px 0;
+}
+.footer-links p, .address p{
+    color: #000;
+    padding: 2px;
+    font-size: 17px;
+}
+.footer-links p{
+    font-weight: 800;
+    cursor: pointer;
+}
+.address a{
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+}
+.copy{
+    text-align: center;
+    padding: 10px 0;
+}
+.copy p{
+    color: #000;
+}
